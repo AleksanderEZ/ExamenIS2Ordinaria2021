@@ -4,6 +4,7 @@ import java.util.List;
 import model.Film;
 import ui.swing.SwingFilmDialog;
 import ui.swing.SwingFilmDisplay;
+import model.FilmSorter;
 
 /**
  * @author Aleksander Borysov Ravelo
@@ -12,7 +13,8 @@ public class ShowCommand implements Command {
 
     SwingFilmDisplay display;
     SwingFilmDialog dialog;
-    private final List<Film> list;
+    private List<Film> list;
+    private List<Film> currentList;
     
     public ShowCommand(SwingFilmDisplay display, SwingFilmDialog dialog, List<Film> list) {
         this.display = display;
@@ -27,8 +29,13 @@ public class ShowCommand implements Command {
 
     @Override
     public void execute() {
-        
-        display.add(display);
+        String search = dialog.execute();
+        if(search.isEmpty() || search.isBlank()){
+            display.display(list);
+            return;
+        }
+        else currentList = new FilmSorter(list).sortBy(search);
+        display.display(currentList);
     }
     
 }

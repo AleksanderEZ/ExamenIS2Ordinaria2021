@@ -61,6 +61,16 @@ public class Film {
     public int getVisualizations() {
         return visualizations;
     }
-    
-    
+
+    public String getActors() {
+        String result = "";
+        for (int i = 0; i < actors.length; i++) {
+            result += actors[i] + ",";
+        }
+        return result.substring(0, result.length()-1);
+    }
+
+    public String getGenre() {
+        return genre;
+    }
 }

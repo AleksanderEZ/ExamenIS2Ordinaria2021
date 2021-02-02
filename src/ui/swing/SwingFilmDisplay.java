@@ -1,5 +1,6 @@
 package ui.swing;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -13,7 +14,7 @@ import ui.FilmDisplay;
  **/
 public class SwingFilmDisplay extends JPanel implements FilmDisplay {
 
-    private List<Film> films;
+    private List<Film> films = new ArrayList<>();
     private int currentFilm = 0;
 
     public SwingFilmDisplay() {
@@ -40,6 +41,14 @@ public class SwingFilmDisplay extends JPanel implements FilmDisplay {
     }
     
     private void update(){
+        if(films == null || films.isEmpty()){
+            System.out.println("No se han encontrado resultados");
+            setVisible(false);
+            this.removeAll();
+            setVisible(true);
+            this.updateUI();
+            return;
+        }
         setVisible(false);
         this.removeAll();
         add(filmData());
@@ -63,6 +72,10 @@ public class SwingFilmDisplay extends JPanel implements FilmDisplay {
                 Integer.toString(films.get(currentFilm).getDuration())));
         data.add(new JLabel("Views (M): " + 
                 Integer.toString(films.get(currentFilm).getVisualizations())));
+        data.add(new JLabel("Cast: " + 
+                films.get(currentFilm).getActors()));
+        data.add(new JLabel("Genre: " + 
+                films.get(currentFilm).getGenre()));
         return data;
     }
 
