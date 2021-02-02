@@ -3,6 +3,9 @@ package ui.swing;
 import javax.swing.JPanel;
 import ui.FilmDialog;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class SwingFilmDialog extends JPanel implements FilmDialog {
 
     public SwingFilmDialog() {

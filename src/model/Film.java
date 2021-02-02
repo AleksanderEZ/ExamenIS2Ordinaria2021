@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class Film {
     private String title;
     private int year;
@@ -7,8 +10,12 @@ public class Film {
     private Calification calification;
     private int duration;
     private int visualizations;
+    private String[] actors;
+    private String genre;
 
-    public Film(String title, int year, String director, Calification calification, int duration, int visualizations) {
+    public Film(String title, int year, String director, Calification calification, int duration, int visualizations, String[] actors, String genre) {
+        this.actors = actors;
+        this.genre = genre;
         this.title = title;
         this.year = year;
         this.director = director;

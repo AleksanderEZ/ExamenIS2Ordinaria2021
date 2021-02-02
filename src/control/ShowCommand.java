@@ -5,6 +5,9 @@ import model.Film;
 import ui.swing.SwingFilmDialog;
 import ui.swing.SwingFilmDisplay;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class ShowCommand implements Command {
 
     SwingFilmDisplay display;

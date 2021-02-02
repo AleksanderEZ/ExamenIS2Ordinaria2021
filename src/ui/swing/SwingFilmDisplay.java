@@ -8,6 +8,9 @@ import model.Film;
 import persistence.MockImageLoader;
 import ui.FilmDisplay;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class SwingFilmDisplay extends JPanel implements FilmDisplay {
 
     private List<Film> films;

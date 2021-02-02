@@ -11,6 +11,9 @@ más vistas, las más valoradas. Cada película, además de una carátula, debe 
 un título, año, director, actores, género, calificación y duración. Representar
 el diseño en UML e implementar la arquitectura en Java.*/
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class Main {
 
     public static void main(String[] args) {

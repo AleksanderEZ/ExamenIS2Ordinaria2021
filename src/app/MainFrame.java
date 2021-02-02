@@ -17,6 +17,10 @@ import model.Film;
 import ui.swing.SwingFilmDialog;
 import ui.swing.SwingFilmDisplay;
 
+
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class MainFrame extends JFrame{
 
     private SwingFilmDisplay filmDisplay;

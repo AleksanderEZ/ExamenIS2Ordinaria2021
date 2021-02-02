@@ -2,6 +2,9 @@ package persistence;
 
 import model.Film;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class MockImageLoader implements ImageLoader{
 
     @Override

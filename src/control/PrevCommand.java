@@ -2,6 +2,9 @@ package control;
 
 import ui.swing.SwingFilmDisplay;
 
+/**
+ * @author Aleksander Borysov Ravelo
+ **/
 public class PrevCommand implements Command {
 
     SwingFilmDisplay display;
