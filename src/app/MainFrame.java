@@ -35,9 +35,9 @@ public class MainFrame extends JFrame{
         setLocationRelativeTo(null);
         
         getContentPane().setLayout(new BorderLayout());
-        add(filmDisplay(), BorderLayout.SOUTH);
+        add(filmDisplay(), BorderLayout.CENTER);
         add(filmDialog(), BorderLayout.NORTH);
-        add(toolBar(), BorderLayout.CENTER);
+        add(toolBar(), BorderLayout.SOUTH);
         
         addCommand(new NextCommand(filmDisplay));
         addCommand(new ShowCommand(filmDisplay, filmDialog, list));
