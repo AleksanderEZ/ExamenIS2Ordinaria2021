@@ -1,7 +1,15 @@
 package control;
 
+import ui.swing.SwingFilmDisplay;
+
 public class NextCommand implements Command {
 
+    SwingFilmDisplay display;
+    
+    public NextCommand(SwingFilmDisplay display) {
+        this.display = display;
+    }
+    
     @Override
     public String name() {
         return "Next";
@@ -9,7 +17,7 @@ public class NextCommand implements Command {
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        display.next();
     }
 
 }

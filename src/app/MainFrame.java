@@ -8,10 +8,12 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.Film;
 import ui.swing.SwingFilmDialog;
 import ui.swing.SwingFilmDisplay;
 
@@ -19,9 +21,9 @@ public class MainFrame extends JFrame{
 
     private SwingFilmDisplay filmDisplay;
     private SwingFilmDialog filmDialog;
-    private Map<String, Command> commands;
+    private final Map<String, Command> commands;
 
-    public MainFrame() {
+    public MainFrame(List<Film> list) {
         commands = new HashMap<>();
         setTitle("FilmApp");
         setSize(800, 600);
@@ -33,9 +35,9 @@ public class MainFrame extends JFrame{
         add(filmDialog(), BorderLayout.NORTH);
         add(toolBar(), BorderLayout.SOUTH);
         
-        addCommand(new NextCommand());
-        addCommand(new ShowCommand());
-        addCommand(new PrevCommand());
+        addCommand(new NextCommand(filmDisplay));
+        addCommand(new ShowCommand(filmDisplay, filmDialog, list));
+        addCommand(new PrevCommand(filmDisplay));
         setVisible(true);
     }
 
@@ -49,6 +51,10 @@ public class MainFrame extends JFrame{
         SwingFilmDialog dialog = new SwingFilmDialog();
         this.filmDialog = dialog;
         return dialog;
+    }
+
+    public SwingFilmDisplay getFilmDisplay() {
+        return filmDisplay;
     }
     
     private JPanel toolBar() {

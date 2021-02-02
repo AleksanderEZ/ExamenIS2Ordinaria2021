@@ -1,7 +1,15 @@
 package control;
 
+import ui.swing.SwingFilmDisplay;
+
 public class PrevCommand implements Command {
 
+    SwingFilmDisplay display;
+    
+    public PrevCommand(SwingFilmDisplay display) {
+        this.display = display;
+    }
+    
     @Override
     public String name() {
         return "Prev";
@@ -9,7 +17,7 @@ public class PrevCommand implements Command {
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        display.prev();
     }
 
 }
