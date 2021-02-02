@@ -30,4 +30,30 @@ public class Film {
             return calification;
         }
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public Calification getCalification() {
+        return calification;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public int getVisualizations() {
+        return visualizations;
+    }
+    
+    
 }

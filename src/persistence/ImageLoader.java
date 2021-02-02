@@ -1,5 +1,7 @@
 package persistence;
 
+import model.Film;
+
 public interface ImageLoader {
-    String load();
+    String load(Film film);
 }
