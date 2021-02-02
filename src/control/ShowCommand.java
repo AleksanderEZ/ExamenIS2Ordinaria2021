@@ -4,7 +4,7 @@ import java.util.List;
 import model.Film;
 import ui.swing.SwingFilmDialog;
 import ui.swing.SwingFilmDisplay;
-import model.FilmSorter;
+import model.MockFilmSorter;
 
 /**
  * @author Aleksander Borysov Ravelo
@@ -34,7 +34,7 @@ public class ShowCommand implements Command {
             display.display(list);
             return;
         }
-        else currentList = new FilmSorter(list).sortBy(search);
+        else currentList = new MockFilmSorter(list).sortBy(search);
         display.display(currentList);
     }
     
