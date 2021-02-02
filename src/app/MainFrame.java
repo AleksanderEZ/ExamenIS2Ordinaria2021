@@ -35,9 +35,9 @@ public class MainFrame extends JFrame{
         setLocationRelativeTo(null);
         
         getContentPane().setLayout(new BorderLayout());
-        add(filmDisplay(), BorderLayout.CENTER);
+        add(filmDisplay(), BorderLayout.SOUTH);
         add(filmDialog(), BorderLayout.NORTH);
-        add(toolBar(), BorderLayout.SOUTH);
+        add(toolBar(), BorderLayout.CENTER);
         
         addCommand(new NextCommand(filmDisplay));
         addCommand(new ShowCommand(filmDisplay, filmDialog, list));
@@ -67,6 +67,7 @@ public class MainFrame extends JFrame{
         toolbar.add(button("Prev"));
         toolbar.add(button("Show"));
         toolbar.add(button("Next"));
+        toolbar.setSize(200, 100);
         return toolbar;
     }
 
